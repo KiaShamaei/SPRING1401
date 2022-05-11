@@ -13,12 +13,18 @@
     <bean id="TestDIFortuneService" class="com.luv2code.springdemo.service.TestDIFortune">
 
     </bean>
+    <context:property-placeholder location="classpath:sport.properties" />
 
     <bean id="myCoach" class="com.luv2code.springdemo.BaseballCoach">
+        <!-- set up constructor injection-->
         <constructor-arg ref="TestDIFortuneService"/>
     </bean>
     <bean id="myCoachCricket" class="com.luv2code.springdemo.CricketCoach">
+        <!-- set up constructor setter-->
         <property name="fortuneService" ref="fortuneService" />
+        <!--inject literal -->
+        <property name="emailAddress" value="${foo.email}"/>
+        <property name="name" value="kiarash-shamaii" />
     </bean>
 
 </beans>

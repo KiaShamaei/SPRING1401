@@ -8,7 +8,7 @@ public class HelloSpringApp {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         //retrieve bean from spring container
         Coach myCoach = context.getBean("myCoach" , Coach.class);
-        Coach myCricketCoach = context.getBean("myCoachCricket" , Coach.class);
+        CricketCoach myCricketCoach = context.getBean("myCoachCricket" , CricketCoach.class);
 
         //call methods on bean
         System.out.println(myCoach.getDailyWorkout());
@@ -17,6 +17,9 @@ public class HelloSpringApp {
         System.out.println(myCoach.getFortuneService());
         //call method which import with dependency injection setter
         System.out.println(myCricketCoach.getDailyWorkout());
+        //inject literal
+        System.out.println(myCricketCoach.getEmailAddress());
+
 
         //close the context
         context.close();
