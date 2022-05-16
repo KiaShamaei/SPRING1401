@@ -45,4 +45,14 @@ public class CricketCoach implements Coach {
         return "this is with setter injection"  + fortuneService.getDailyFortune();
     }
 
+
+
+    public void doMyStartUPStuff (){
+        System.out.println("this is a init methode befor bean ");
+    }
+    public void destroyMethod (){
+        System.out.println("this is a destroy methode befor bean ");
+    }
+
+
 }

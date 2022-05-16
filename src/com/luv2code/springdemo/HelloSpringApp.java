@@ -8,6 +8,8 @@ public class HelloSpringApp {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         //retrieve bean from spring container
         Coach myCoach = context.getBean("myCoach" , Coach.class);
+        Coach SingleCoach = context.getBean("singleTon" , Coach.class);
+
         CricketCoach myCricketCoach = context.getBean("myCoachCricket" , CricketCoach.class);
 
         //call methods on bean

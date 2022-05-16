@@ -20,6 +20,19 @@
         <!-- set up constructor injection-->
         <constructor-arg ref="TestDIFortuneService"/>
     </bean>
+    <!--test bean with scope prototype -->
+    <bean id="myCoachPrototype" class="com.luv2code.springdemo.BaseballCoach"
+    scope="prototype"
+    >
+        <!-- set up constructor injection-->
+        <constructor-arg ref="TestDIFortuneService"/>
+    </bean>
+    <!--test bean with  add  custome code in life cycle -->
+    <bean id="myCoachWithCustomCode" class="com.luv2code.springdemo.BaseballCoach"
+    >
+        <!-- set up constructor injection-->
+        <constructor-arg ref="TestDIFortuneService"/>
+    </bean>
     <bean id="myCoachCricket" class="com.luv2code.springdemo.CricketCoach">
         <!-- set up constructor setter-->
         <property name="fortuneService" ref="fortuneService" />
